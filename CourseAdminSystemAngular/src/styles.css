@@ -1,0 +1,62 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap');
+
+* {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1rem;
+    font-weight: 300;
+  }
+
+  .cdk-overlay-container {
+    position: fixed;
+    z-index: 1000;
+  }
+
+body {
+    margin: 0;
+    padding: 0;
+    padding-left: 2vw;
+    padding-right: 3vw;
+    padding-bottom: 2rem;
+    font-family: sans-serif;
+    background: linear-gradient(to right, #fbfbfb, #edf4ff, #e0f0ff);
+    backdrop-filter: blur(6px);
+}
+
+.logo {
+    font-family: 'Poppins', sans-serif;
+    font-size: 2.5rem;
+    font-weight: 600;
+    color: #2c3e50;
+}
+
+.example-spacer {
+    flex: 1 1 auto;
+  }
+  
+  .content {
+    padding: 16px;
+  }
+  
+  /* Ensure menu appears correctly */
+  .cdk-overlay-container {
+    position: fixed;
+    z-index: 1000;
+  }
+  
+  /* Style the toolbar to match your design */
+  mat-toolbar {
+    background: transparent !important;
+    padding: 0 16px;
+  }
+  
+  /* Style menu items */
+  .mat-menu-item {
+    font-family: 'Poppins', sans-serif !important;
+  }
+  
+  /* Style the menu icon button */
+  .mat-icon-button {
+    color: #2c3e50 !important;
+  }
+

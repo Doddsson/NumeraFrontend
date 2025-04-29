@@ -1,0 +1,48 @@
+<div class="edit-expense-container">
+    <form (ngSubmit)="updateExpense()" #expenseForm="ngForm">
+  
+      <h1 class="expense-info-header">Edit Expense Information</h1>
+  
+      <div class="form-group">
+        <label for="id"><b>Expense Id: {{ expense.id }} </b></label>
+      </div>
+  
+      <div class="form-group">
+        <label for="userId"><b>User Id: {{ expense.userId }}</b></label>
+      </div>
+  
+      <div class="form-group">
+        <label for="amount">Amount</label>
+        <input type="number" id="amount" [(ngModel)]="expense.amount" name="amount" required #amount="ngModel" class="form-control" />
+        <div *ngIf="amount.invalid && amount.touched" class="error-message">Amount must be provided</div>
+      </div>
+  
+      <div class="form-group">
+        <label for="currency">Currency</label>
+        <input type="text" id="currency" [(ngModel)]="expense.currency" name="currency" required #currency="ngModel" class="form-control" />
+        <div *ngIf="currency.invalid && currency.touched" class="error-message">Currency must be provided</div>
+      </div>
+  
+      <div class="form-group">
+        <label for="category">Category</label>
+        <input type="text" id="category" [(ngModel)]="expense.category" name="category" required #category="ngModel" class="form-control" />
+        <div *ngIf="category.invalid && category.touched" class="error-message">Category must be provided</div>
+      </div>
+  
+      <div class="form-group">
+        <label for="description">Description</label>
+        <textarea id="description" [(ngModel)]="expense.description" name="description" class="form-control" rows="4"></textarea>
+      </div>
+
+      <div class="form-group">
+        <label for="date"><b>Date: {{ expense.date | date }}</b></label>
+      </div>
+  
+      <div *ngIf="amount.invalid || currency.invalid || category.invalid" class="error-message">
+        Error in data entered
+      </div>
+  
+      <button type="submit" [disabled]="expenseForm.invalid" class="app-btn">Update</button>
+    </form>
+  </div>
+  

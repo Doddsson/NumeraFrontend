@@ -1,0 +1,71 @@
+@if (expense != null) {
+    @if (mode == 0) {
+        <div>
+            <b>ID:</b><span>{{expense.id}}</span>
+        </div>
+        <div>
+            <b>Amount:</b><span>{{expense.amount}}</span>
+        </div>
+        <div>
+            <b>Currency:</b><span>{{expense.currency}}</span>
+        </div>
+        <div>
+            <b>Category:</b><span>{{expense.category}}</span>
+        </div>
+        <div>
+            <b>Description:</b><span>{{expense.description}}</span>
+        </div>
+        <div>
+            <b>Date:</b><span>{{expense.date}}</span>
+        </div>
+        <div>
+            <b>User ID:</b><span>{{expense.userId}}</span>
+        </div>
+    } 
+    @else {
+    <table class="user-info-table">
+        <thead>
+            <tr>
+                <th colspan="2" class="table-header">Expense Information</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td class="left-column"><b>Id</b></td>
+                <td class="right-column">{{ expense.id }}</td>
+            </tr> 
+            <tr>
+                <td class="left-column"><b>Amount</b></td>
+                <td class="right-column">{{ expense.amount }}</td>
+            </tr>
+            <tr>
+                <td class="left-column"><b>Currency</b></td>
+                <td class="right-column">{{ expense.currency }}</td>
+            </tr>
+            <tr>
+                <td class="left-column"><b>Category</b></td>
+                <td class="right-column">{{ expense.category }}</td>
+            </tr>
+            <tr>
+                <td class="left-column"><b>Description</b></td>
+                <td class="right-column">{{ expense.description }}</td>
+            </tr>   
+            <tr>
+                <td class="left-column"><b>Date</b></td>
+                <td class="right-column">{{ expense.date | date }}</td>
+            </tr>
+            <tr>
+                <td class="left-column"><b>User Id</b></td>
+                <td class="right-column">{{ expense.userId }}</td>
+            </tr>         
+        </tbody>
+    </table>
+    }
+    <div>
+        <button (click)="editExpense(expense.id)" class="app-btn">Edit</button>
+        <button (click)="deleteExpense()" class="app-btn">Delete</button>
+    </div>
+}
+@else {
+    <p>No expense information available</p>
+}

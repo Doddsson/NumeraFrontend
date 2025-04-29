@@ -1,0 +1,39 @@
+
+
+<form [formGroup]="userForm" (ngSubmit)="createUser()">
+
+    <h1 class="user-info-header">Add New User Information</h1>
+
+    <div class="form-group">
+        <label for="fullName">Name</label>
+        <input type="text" id="fullName" formControlName="fullName" class="form-control" />
+        <div *ngIf="fullName.invalid && fullName.touched" class="error-message">Name must be provided</div>
+    </div>
+
+    <div class="form-group">
+        <label for="username">Username</label>
+        <input type="text" id="username" formControlName="username" class="form-control" />
+        <div *ngIf="username.invalid && username.touched" class="error-message">Username must be provided</div>
+    </div>
+
+    <div class="form-group">
+        <label for="password">Password</label>
+        <input type="password" id="password" formControlName="password" class="form-control" />
+        <div *ngIf="password.invalid && password.touched" class="error-message">Password must be provided</div>
+    </div>
+
+    <div class="form-group">
+        <label for="email">Email</label>
+        <input type="text" id="email" formControlName="email" class="form-control" />
+        <div *ngIf="email.invalid && email.touched" class="error-message">Email must be provided</div>
+    </div>
+
+    <div class="form-group">
+        <label for="phone">Phone</label>
+        <input type="text" id="phone" formControlName="phone" class="form-control" />
+        <div *ngIf="phone.invalid && phone.touched" class="error-message">Phone number must be provided</div>
+    </div>
+
+    <button type="submit" [disabled]="userForm.invalid" class="app-btn">Save</button>
+</form>
+

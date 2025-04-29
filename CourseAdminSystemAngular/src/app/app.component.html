@@ -1,0 +1,50 @@
+
+<mat-toolbar>
+  <button mat-icon-button class="example-icon" aria-label="Menu" [matMenuTriggerFor]="menu">
+    <mat-icon>menu</mat-icon>
+  </button>
+
+  <mat-menu #menu="matMenu">
+    <button mat-menu-item routerLink="/users">User list</button>
+    <button mat-menu-item routerLink="/add-user">Add user</button>
+    <button mat-menu-item routerLink="/expenses">Expense list</button>
+    <button mat-menu-item routerLink="/add-expense">Add expense</button>
+  </mat-menu>
+
+  <h1 class="logo">Numera</h1>
+  <span class="example-spacer"></span>
+</mat-toolbar>
+
+<div class="content">
+  <router-outlet></router-outlet>
+</div>
+
+<!--
+
+  <h1 class="logo">Numera</h1>
+
+  <ol>
+    <li>
+      <a routerLink="/user/1">User</a>
+    </li>
+    <li>
+      <a routerLink="/users">User list</a>
+    </li>
+    <li>
+      <a routerLink="/add-user">Add user</a>
+    </li>
+    <li>
+      <a routerLink="/expense">Expense</a>
+    </li>
+    <li>
+      <a routerLink="/expenses">Expense list</a>
+    </li>
+    <li>
+      <a routerLink="/add-expense">Add expense</a>
+    </li>
+  </ol>
+
+  -->
+
+  <router-outlet></router-outlet>
+

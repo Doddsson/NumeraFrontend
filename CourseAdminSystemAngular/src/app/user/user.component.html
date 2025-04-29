@@ -1,0 +1,73 @@
+@if (user != null) {
+    @if (mode == 0) {
+        <div class="user-info-container">
+            <div class="user-info">
+                <b>Id:</b><span>{{user.id}}</span>
+            </div>
+            <div class="user-info">
+                <b>Name:</b><span>{{user.fullName}}</span>
+            </div>
+            <div class="user-info">
+                <b>Username:</b><span>{{user.username}}</span>
+            </div>
+            <div class="user-info">
+                <b>Password:</b><span>{{user.password}}</span>
+            </div>
+            <div class="user-info">
+                <b>Email:</b><span>{{user.email}}</span>
+            </div>
+            <div class="user-info">
+                <b>Phone:</b><span>{{user.phone}}</span>
+            </div>
+            <div class="user-info">
+                <b>Create Date:</b><span>{{user.createDate}}</span>
+            </div>
+        </div>
+    } 
+    @else {
+        <table class="user-info-table">
+            <thead>
+                <tr>
+                    <th colspan="2" class="table-header">User Information</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="left-column"><b>Id</b></td>
+                    <td class="right-column">{{ user.id }}</td>
+                </tr>
+                <tr>
+                    <td class="left-column"><b>Name</b></td>
+                    <td class="right-column">{{ user.fullName }}</td>
+                </tr>
+                <tr>
+                    <td class="left-column"><b>Username</b></td>
+                    <td class="right-column">{{ user.username }}</td>
+                </tr>
+                <tr>
+                    <td class="left-column"><b>Password</b></td>
+                    <td class="right-column">{{ '•'.repeat(user.password.length) }}</td>
+                </tr>
+                <tr>
+                    <td class="left-column"><b>Email</b></td>
+                    <td class="right-column">{{ user.email }}</td>
+                </tr>
+                <tr>
+                    <td class="left-column"><b>Phone</b></td>
+                    <td class="right-column">{{ user.phone }}</td>
+                </tr>
+                <tr>
+                    <td class="left-column"><b>Create Date</b></td>
+                    <td class="right-column">{{ user.createDate | date }}</td>
+                </tr>
+            </tbody>
+        </table>
+    }
+    <div class="action-buttons">
+        <button (click)="editUser(user.id)" class="app-btn">Edit</button>
+        <button (click)="deleteUser()" class="app-btn">Delete</button>
+    </div>
+} 
+@else {
+    <p>No user information available</p>
+}
